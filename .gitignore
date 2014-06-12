@@ -15,6 +15,12 @@ local.properties
 .classpath
 .settings/
 .loadpath
+# workspace files are user-specific
+*.sublime-workspace
+
+# project files should be checked into the repository, unless a significant
+# proportion of contributors will probably not be using SublimeText
+# *.sublime-project
 
 # External tool builders
 .externalToolBuilders/
@@ -213,3 +219,11 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+
+
+#############
+## Sublime Text
+#############
+
+*.sublime-workspace
+*.sublime-project

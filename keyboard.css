@@ -1,7 +1,12 @@
+h3 {
+  margin: 0.1em;
+}
+
 #keyboard {
   list-style: none outside none;
   position: relative;
   width: 128px;
+  float: left;
   padding: 0;
 }
 
@@ -21,6 +26,14 @@
   position: absolute;
   height: 10px;
   width: 60px;
+}
+
+.module {
+  border: gray 1px solid;
+  border-radius: 5px;
+  float: left;
+  margin: 1em;
+  padding: 0.5em;
 }
 
 #asharp4 {
@@ -171,8 +184,8 @@
 
 .whitekeyshaded {
     background-image: -webkit-gradient(
-    linear,
-    right bottom,
+    linear
+,    right bottom,
     left bottom,
     color-stop(0, rgb(87, 87, 87)),
     color-stop(0.78, rgb(255, 255, 255)),
