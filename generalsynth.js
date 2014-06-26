@@ -1,6 +1,16 @@
 // Initialize Audio Context
 var context = new webkitAudioContext();
 
+//Create basic module structure of the synthesizer
+var oscMixNode = context.createGainNode();
+var prefilterGn = context.createGainNode();
+var postfilterMixNode = context.createGainNode();
+oscMixNode.connect(prefilterGn);
+prefilterGn.connect(postfilterMixNode);
+postfilterMixNode.connect(context.destination);
+
+prefilterGn.gain.value = 0.5;
+
 //Create Oscillators and start them
 var osc1 = context.createOscillator();
 var osc1a = context.createOscillator();
@@ -306,67 +316,60 @@ osc12a.connect(gn12a);
 osc13.connect(gn13);
 osc13a.connect(gn13a);
 
-//create prefilter gain node, connect GainNodes to master -> speakers
+//Connect GainNodes to a mixernode
+gn1.connect(oscMixNode);
+gn1a.connect(oscMixNode);
 
-var prefilterGn = context.createGainNode();
-prefilterGn.connect(context.destination);
+gn2.connect(oscMixNode);
+gn2a.connect(oscMixNode);
 
-prefilterGn.gain.value = 0.5;
+gn3.connect(oscMixNode);
+gn3a.connect(oscMixNode);
 
-gn1.connect(prefilterGn);
-gn1a.connect(prefilterGn);
+gn4.connect(oscMixNode);
+gn4a.connect(oscMixNode);
 
-gn2.connect(prefilterGn);
-gn2a.connect(prefilterGn);
+gn5.connect(oscMixNode);
+gn5a.connect(oscMixNode);
 
-gn3.connect(prefilterGn);
-gn3a.connect(prefilterGn);
+gn6.connect(oscMixNode);
+gn6a.connect(oscMixNode);
 
-gn4.connect(prefilterGn);
-gn4a.connect(prefilterGn);
+gn7.connect(oscMixNode);
+gn7a.connect(oscMixNode);
 
-gn5.connect(prefilterGn);
-gn5a.connect(prefilterGn);
+gn8.connect(oscMixNode);
+gn8a.connect(oscMixNode);
 
-gn6.connect(prefilterGn);
-gn6a.connect(prefilterGn);
+gn9.connect(oscMixNode);
+gn9a.connect(oscMixNode);
 
-gn7.connect(prefilterGn);
-gn7a.connect(prefilterGn);
+gn10.connect(oscMixNode);
+gn10a.connect(oscMixNode);
 
-gn8.connect(prefilterGn);
-gn8a.connect(prefilterGn);
+gn11.connect(oscMixNode);
+gn11a.connect(oscMixNode);
 
-gn9.connect(prefilterGn);
-gn9a.connect(prefilterGn);
+gn12.connect(oscMixNode);
+gn12a.connect(oscMixNode);
 
-gn10.connect(prefilterGn);
-gn10a.connect(prefilterGn);
-
-gn11.connect(prefilterGn);
-gn11a.connect(prefilterGn);
-
-gn12.connect(prefilterGn);
-gn12a.connect(prefilterGn);
-
-gn13.connect(prefilterGn);
-gn13a.connect(prefilterGn);
+gn13.connect(oscMixNode);
+gn13a.connect(oscMixNode);
 
 // Setup filter nodes
-
 var filter1 = context.createBiquadFilter();
 
 document.getElementById('filter1enable').addEventListener('change', function(e){
 	if (e.srcElement.checked) {
 		prefilterGn.disconnect(context.destination);
 		prefilterGn.connect(filter1);
-		filter1.connect(context.destination);
+		filter1.connect(postfilterMixNode);
 	}
 
 	else if (!e.srcElement.checked) {
 		prefilterGn.disconnect(filter1);
-		prefilterGn.connect(context.destination);
-		filter1.disconnect(context.destination);
+		prefilterGn.connect(postfilterMixNode);
+		filter1.disconnect(postfilterMixNode);
 	}
 });
 
