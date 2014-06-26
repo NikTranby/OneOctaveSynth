@@ -70,8 +70,8 @@ osc13a.noteOn(0);
 
 //Set Oscillator types, 0 = sine, 1 = square, 2 = ?, 3 = ?
 
-firstOscType = 1;
-secondOscType = 0;
+var firstOscType = 1;
+var secondOscType = 0;
 
 osc1.type = firstOscType;
 osc1a.type = secondOscType;
@@ -157,7 +157,7 @@ osc2a.frequency.value = osc1.frequency.value / 2;
 osc3.frequency.value = 293.665; //d4
 osc3a.frequency.value = osc1.frequency.value / 2;
 
-osc4.frequency.value = 311.127; //d#4
+osc4.frequency.value = 311.127; //d#4sz
 osc4a.frequency.value = osc1.frequency.value / 2;
 
 osc5.frequency.value = 329.928; //e4
@@ -189,44 +189,44 @@ osc13a.frequency.value = osc1.frequency.value / 2;
 
 
 //Create GainNodes, set levels at 0 and connect oscillators
-gn1 = context.createGainNode();
-gn1a = context.createGainNode();
+var gn1 = context.createGainNode();
+var gn1a = context.createGainNode();
 
-gn2 = context.createGainNode();
-gn2a = context.createGainNode();
+var gn2 = context.createGainNode();
+var gn2a = context.createGainNode();
 
-gn3 = context.createGainNode();
-gn3a = context.createGainNode();
+var gn3 = context.createGainNode();
+var gn3a = context.createGainNode();
 
-gn4 = context.createGainNode();
-gn4a = context.createGainNode();
+var gn4 = context.createGainNode();
+var gn4a = context.createGainNode();
 
-gn5 = context.createGainNode();
-gn5a = context.createGainNode();
+var gn5 = context.createGainNode();
+var gn5a = context.createGainNode();
 
-gn6 = context.createGainNode();
-gn6a = context.createGainNode();
+var gn6 = context.createGainNode();
+var gn6a = context.createGainNode();
 
-gn7 = context.createGainNode();
-gn7a = context.createGainNode();
+var gn7 = context.createGainNode();
+var gn7a = context.createGainNode();
 
-gn8 = context.createGainNode();
-gn8a = context.createGainNode();
+var gn8 = context.createGainNode();
+var gn8a = context.createGainNode();
 
-gn9 = context.createGainNode();
-gn9a = context.createGainNode();
+var gn9 = context.createGainNode();
+var gn9a = context.createGainNode();
 
-gn10 = context.createGainNode();
-gn10a = context.createGainNode();
+var gn10 = context.createGainNode();
+var gn10a = context.createGainNode();
 
-gn11 = context.createGainNode();
-gn11a = context.createGainNode();
+var gn11 = context.createGainNode();
+var gn11a = context.createGainNode();
 
-gn12 = context.createGainNode();
-gn12a = context.createGainNode();
+var gn12 = context.createGainNode();
+var gn12a = context.createGainNode();
 
-gn13 = context.createGainNode();
-gn13a = context.createGainNode();
+var gn13 = context.createGainNode();
+var gn13a = context.createGainNode();
 
 gn1.gain.value = 0;
 gn1a.gain.value = 0;
@@ -308,7 +308,7 @@ osc13a.connect(gn13a);
 
 //create prefilter gain node, connect GainNodes to master -> speakers
 
-prefilterGn = context.createGainNode();
+var prefilterGn = context.createGainNode();
 prefilterGn.connect(context.destination);
 
 prefilterGn.gain.value = 0.5;
@@ -389,8 +389,8 @@ window.addEventListener("keydown", keyboardDown, false);
 window.addEventListener("keyup", keyboardUp, false);
  
 function keyboardDown(e) {
-	firstOscGain = 0.5;
-	secondOscGain = 0.7; 
+	var firstOscGain = 0.5;
+	var secondOscGain = 0.7;
 
 	switch (e.keyCode) {
 		case 90:
