@@ -162,40 +162,40 @@ osc1.frequency.value = 261.626; //c4
 osc1a.frequency.value = osc1.frequency.value / 2;
 
 osc2.frequency.value = 277.183; //c#4
-osc2a.frequency.value = osc1.frequency.value / 2;
+osc2a.frequency.value = osc2.frequency.value / 2;
 
 osc3.frequency.value = 293.665; //d4
-osc3a.frequency.value = osc1.frequency.value / 2;
+osc3a.frequency.value = osc3.frequency.value / 2;
 
 osc4.frequency.value = 311.127; //d#4sz
-osc4a.frequency.value = osc1.frequency.value / 2;
+osc4a.frequency.value = osc4.frequency.value / 2;
 
 osc5.frequency.value = 329.928; //e4
-osc5a.frequency.value = osc1.frequency.value / 2;
+osc5a.frequency.value = osc5.frequency.value / 2;
 
 osc6.frequency.value = 349.448; //f4
-osc6a.frequency.value = osc1.frequency.value / 2;
+osc6a.frequency.value = osc6.frequency.value / 2;
 
 osc7.frequency.value = 369.994; //f#4
-osc7a.frequency.value = osc1.frequency.value / 2;
+osc7a.frequency.value = osc7.frequency.value / 2;
 
 osc8.frequency.value = 391.995; //g4
-osc8a.frequency.value = osc1.frequency.value / 2;
+osc8a.frequency.value = osc8.frequency.value / 2;
 
 osc9.frequency.value = 425.305; //g#4
-osc9a.frequency.value = osc1.frequency.value / 2;
+osc9a.frequency.value = osc9.frequency.value / 2;
 
 osc10.frequency.value = 440.000; //a4
-osc10a.frequency.value = osc1.frequency.value / 2;
+osc10a.frequency.value = osc10.frequency.value / 2;
 
 osc11.frequency.value = 466.164; //a#4
-osc11a.frequency.value = osc1.frequency.value / 2;
+osc11a.frequency.value = osc11.frequency.value / 2;
 
 osc12.frequency.value = 493.883; //b4
-osc12a.frequency.value = osc1.frequency.value / 2;
+osc12a.frequency.value = osc12.frequency.value / 2;
 
 osc13.frequency.value = 523.251; //b4
-osc13a.frequency.value = osc1.frequency.value / 2;
+osc13a.frequency.value = osc13.frequency.value / 2;
 
 
 //Create GainNodes, set levels at 0 and connect oscillators
