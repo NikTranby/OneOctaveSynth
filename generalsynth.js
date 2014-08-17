@@ -2,9 +2,9 @@
 var context = new webkitAudioContext();
 
 //Create basic module structure of the synthesizer
-var oscMixNode = context.createGainNode();
-var prefilterGn = context.createGainNode();
-var postfilterMixNode = context.createGainNode();
+var oscMixNode = context.createGain();
+var prefilterGn = context.createGain();
+var postfilterMixNode = context.createGain();
 oscMixNode.connect(prefilterGn);
 prefilterGn.connect(postfilterMixNode);
 postfilterMixNode.connect(context.destination);
@@ -199,44 +199,44 @@ osc13a.frequency.value = osc13.frequency.value / 2;
 
 
 //Create GainNodes, set levels at 0 and connect oscillators
-var gn1 = context.createGainNode();
-var gn1a = context.createGainNode();
+var gn1 = context.createGain();
+var gn1a = context.createGain();
 
-var gn2 = context.createGainNode();
-var gn2a = context.createGainNode();
+var gn2 = context.createGain();
+var gn2a = context.createGain();
 
-var gn3 = context.createGainNode();
-var gn3a = context.createGainNode();
+var gn3 = context.createGain();
+var gn3a = context.createGain();
 
-var gn4 = context.createGainNode();
-var gn4a = context.createGainNode();
+var gn4 = context.createGain();
+var gn4a = context.createGain();
 
-var gn5 = context.createGainNode();
-var gn5a = context.createGainNode();
+var gn5 = context.createGain();
+var gn5a = context.createGain();
 
-var gn6 = context.createGainNode();
-var gn6a = context.createGainNode();
+var gn6 = context.createGain();
+var gn6a = context.createGain();
 
-var gn7 = context.createGainNode();
-var gn7a = context.createGainNode();
+var gn7 = context.createGain();
+var gn7a = context.createGain();
 
-var gn8 = context.createGainNode();
-var gn8a = context.createGainNode();
+var gn8 = context.createGain();
+var gn8a = context.createGain();
 
-var gn9 = context.createGainNode();
-var gn9a = context.createGainNode();
+var gn9 = context.createGain();
+var gn9a = context.createGain();
 
-var gn10 = context.createGainNode();
-var gn10a = context.createGainNode();
+var gn10 = context.createGain();
+var gn10a = context.createGain();
 
-var gn11 = context.createGainNode();
-var gn11a = context.createGainNode();
+var gn11 = context.createGain();
+var gn11a = context.createGain();
 
-var gn12 = context.createGainNode();
-var gn12a = context.createGainNode();
+var gn12 = context.createGain();
+var gn12a = context.createGain();
 
-var gn13 = context.createGainNode();
-var gn13a = context.createGainNode();
+var gn13 = context.createGain();
+var gn13a = context.createGain();
 
 gn1.gain.value = 0;
 gn1a.gain.value = 0;
